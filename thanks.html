@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/static/css/style.css" rel="stylesheet" type="text/css">
+  <link href="/static/css/media.css" rel="stylesheet" type="text/css">
+  <link href="/static/css/bootstrap.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="/static/js/bootstrap.js"></script>
+  <script src="/static/js/common.js"></script>
+
+  <!-- Put this script tag to the <head> of your page -->
+  <script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script>
+
+  <script type="text/javascript">
+    VK.init({ apiId: 7474376, onlyWidgets: true });
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113537784-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-113537784-2');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet"
+    type="text/css" />
+  <title>Апгрейд ноутбука</title>
+  <link rel="shortcut icon" href="/static/images/favicon.png" type="image/png">
+</head>
+
+<body>
+  <script>
+    $(document).ready(function () {
+      var target = $('.forms');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top - 40
+        }, 1000);
+      }
+    })
+  </script>
+  <header class="container header-picture">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12">
+        <h1 class="logo">Апгрейд ноутбука - <br> подбор комплектующих</h1>
+
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="container">
+      <h2 class="visually-hidden">Апгрейд ноутбука</h2>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-7 col-lg-8 discription">
+          <p>Вы пишите свою модель ноутбука — мы готовим для вас заключение
+            со списком комплектующих, идеально подходящих именно вашей
+            модели. Заключение придет на вашу электронную почту.</p>
+        </div>
+        <div class="col-xs-11 col-sm-6 col-md-5 col-lg-4 example" onclick="window.open('file.doc')">
+          <div class="example-picture"></div>
+          <div class="example-arrow"></div>
+          <div class="example-text">
+            <p>Вот так выглядит <span>пример заключения</span></p>
+          </div>
+        </div>
+      </div>
+      <p class="result">Вы получите</p>
+      <div class="row result-text">
+        <div class="col-xs-12 col-sm-4">
+          <img src="/static/images/Union.svg" class="result-img" alt="result">
+          <p><span>Порядок</span> закупки комплектующих (жесткий диск, память, процессор, дискретная
+            видеокарта).</p>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <img src="/static/images/Union2.svg" class="result-img" alt="compare">
+          <p><span>Сравнение</span> текущей и будущей производительности ноутбука.</p>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <img src="/static/images/Union1.svg" class="result-img" alt="address">
+          <p><span>Ссылки</span> на магазины, где можно купить комплектующие по низкой цене.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container forms">
+      <h3 class="visually-hidden">Платеж принят</h3>
+      <div class="row container-form important_form">
+        <div class="col-xs-12 col-sm-12">
+          <img src="/static/images/success.png" class="success" alt="success">
+          <div class="modal_windows_title">Спасибо! Платеж принят</div>
+          <div class="modal_windows_item">Вы получите заключение об апгрейде ноутбука <span>{{ laptop }}</span>
+            на почту {{email}} в течении 1 рабочего дня</div>
+          <div class="col-xs-12 modal_windows_button">Заказать другое заключение</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container form_vk">
+      <div class="row">
+        <div class="vk-block">
+          <h3 class="visually-hidden">Комментарии</h3>
+
+          <!-- Put this div tag to the place, where the Comments block will be -->
+          <div id="vk_comments"></div>
+          <script type="text/javascript">
+            VK.Widgets.Comments("vk_comments", { limit: 5, attach: false });
+          </script>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="form-tooltip">
+    <div class="form-tooltip_title">Как узнать модель ноутбука?</div>
+    <div class="form-tooltip_item"><span>Вариант 1:</span> Найти наклейку на корпусе
+      <span>Вариант 2:</span> В консоли Windows ввести wmic csproduct get name и нажать Enter.
+      <span>Как попасть в консоль:</span> нажать клавиши win+r, в появившемся окне ввести cmd и нажать Enter.
+    </div>
+  </div>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+      m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(61924180, "init", {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+      webvisor: true
+    });
+  </script>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/61924180" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
+
+</body>
+
+</html>

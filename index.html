@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords"
+  content="апгрейд ноутбука, апгрейд ноутбука asus, апгрейд ноутбука hp, апгрейд ноутбука acer, апгрейд ноутбука lenovo, апгрейд ноутбука acer aspire, апгрейд процессора ноутбука, апгрейд ноутбука samsung, апгрейд видеокарты ноутбука, апгрейд ноутбука hp pavilion, апгрейд ноутбука dell, как сделать апгрейд ноутбука, апгрейд ноутбука msi, модернизация ноутбука, модернизация ноутбука asus, модернизация ноутбука hp, модернизация ноутбука acer, модернизация ноутбука lenovo, модернизация ноутбука dell" />
+  <script src="/static/js/local_storage.js"></script>
+  <link href="/static/css/style.css" rel="stylesheet">
+  <link href="/static/css/media.css" rel="stylesheet">
+  <link href="/static/css/bootstrap.css" rel="stylesheet">
+  <link  rel="stylesheet" href="/static/css/easydropdown.css" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113537784-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-113537784-2');
+  </script>
+
+
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+    rel="stylesheet" type="text/css" />
+  <title>Апгрейд ноутбука</title>
+  <link rel="shortcut icon" href="/static/images/favicon.png" type="image/png">
+</head>
+
+<body>
+  <div class="overlay"></div>
+  <header class="container header-picture">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12">
+        <h1 class="logo">Апгрейд ноутбука— подбор комплектующих</h1>
+
+      </div>
+    </div>
+  </header>
+  <main>
+
+    <section class="container">
+      <h2 class="visually-hidden">Апгрейд ноутбука</h2>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-7 col-lg-8 discription">
+          <p>Вы пишите свою модель ноутбука — мы готовим для вас заключение
+            со списком комплектующих, идеально подходящих именно вашей
+            модели. Заключение придет на вашу электронную почту.</p>
+        </div>
+        <div class="col-xs-11 col-sm-6 col-md-5 col-lg-4 example" onclick="window.open('/static/file.doc')">
+          <div class="example-picture"></div>
+          <div class="example-arrow"></div>
+          <div class="example-text">
+            <p>Вот так выглядит <span>пример заключения</span></p>
+          </div>
+        </div>
+      </div>
+      <p class="result">Вы получите</p>
+      <div class="row result-text">
+        <div class="col-xs-12 col-sm-4">
+          <img src="/static/images/Union2.svg" class="result-img" alt="compare">
+          <p><span>Порядок</span> закупки комплектующих (жесткий диск, память, процессор, дискретная
+            видеокарта).</p>
+        </div>
+        <div class="col-xs-12 col-sm-4 sravnenie" >
+          <img src="/static/images/Union.svg" class="result-img" alt="result">
+          <p><span>Сравнение</span> текущей и будущей производительности ноутбука.</p>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <img src="/static/images/Union1.svg" class="result-img" alt="address">
+          <p><span>Ссылки</span> на магазины, где можно купить комплектующие по низкой цене.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container forms">
+      <div class="row container-form">
+        <div class="col-xs-12 col-sm-12">
+          <h2>Получить заключение</h2>
+          <form method="POST" class="important_form" action="/search/">
+            {% csrf_token %}
+            <div id="form_icons" class="wert question"></div>
+            <label for="model_notebook" class="label-model">Модель ноутбука *</label>
+            <input type="text" class="field_option search" name="term" id="model_notebook" />
+            <label for="email" class="label-email">Электронная почта *</label>
+            <input type="text" class="field_option n-em" maxlength="50" id="email" autocomplete="off" />
+            <div class="hint">Проверьте написание электронной почты</div>
+            <label for="comment" class="label-comment">Комментарий</label>
+            <input type="text" class="field_option" name="comment" id="comment" maxlength="1000" />
+            <label class="price_mob col-xs-4">{{amount}} <span class="rouble">&#8399;</span><br>
+              <span class="price_zakl">Стоимость заключения</span></label>
+            <div class="btn_black col-xs-8 col-sm-5"><span>Оплатить</span> </div>
+            <label class="price col-xs-12 col-sm-4">{{amount}} <span class="rouble">&#8399;</span><br>
+              <span class="price_zakl">Стоимость заключения</span></label>
+            <br>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="container">
+      <h3 class="visually-hidden">ссылки</h3>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-lg-6 col-lg-offset-2">
+          <a class="link-privacy" href="/privacy">Политика обработки персональных данных</a>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-lg-2">
+          <a class="link-oferta" href="/oferta">Оферта</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container form_vk">
+      <div class="row">
+        <div class="vk-block">
+          <h3 class="visually-hidden">Комментарии</h3>
+          <!-- Put this script tag to the <head> of your page -->
+          <script src="https://vk.com/js/api/openapi.js?168"></script>
+
+          <script>
+            VK.init({ apiId: 7474376, onlyWidgets: true });
+          </script>
+
+          <!-- Put this div tag to the place, where the Comments block will be -->
+          <div id="vk_comments"></div>
+          <script>
+            VK.Widgets.Comments("vk_comments", { limit: 5, attach: false });
+          </script>
+        </div>
+      </div>
+    </section>
+
+    <div class="form-tooltip">
+        <div class="form-tooltip_title">Как узнать модель ноутбука?</div>
+        <div class="form-tooltip_item">
+          <div class="number1"><span>Вариант 1.</span> Найти наклейку на корпусе</div>
+          <div class="variant_item"><span>Вариант 2.</span>
+            <ul class="variants">
+              <li>Нажать клавиши WIN+R <img src="static/images/buttons.svg" alt="buttons"></li>
+              <li>В появившемся окне ввести cmd и нажать Enter.</li>
+              <li>В появившейся консоли Windows ввести <br> wmic csproduct get name и нажать Enter.</li>
+            </ul>
+          </div>
+          <p class="instruction"><a class="link-privacy" href="/kak-uznat-model-noutbuka">Подробная
+              инструкция</a></p>
+        </div>
+      </div>
+  </main>
+
+  <form method="POST" action="https://money.yandex.ru/quickpay/confirm.xml" id="yandex-form" style="display: none;">
+    <input type="hidden" name="receiver" value="4100112426807644">
+    <input type="hidden" name="formcomment" value="">
+    <input type="hidden" name="short-dest" value="">
+    <input type="hidden" name="label" value="">
+    <input type="hidden" name="quickpay-form" value="shop">
+    <input type="hidden" name="targets" value="">
+    <input type="hidden" name="sum" value="" data-type="number">
+    <input type="hidden" name="comment" value="">
+    <input type="hidden" name="need-fio" value="false">
+    <input type="hidden" name="need-email" value="false">
+    <input type="hidden" name="need-phone" value="false">
+    <input type="hidden" name="need-address" value="false">
+    <input type="hidden" name="successURL" value="https://upgrade-laptop.com/thanks/">
+    <label><input type="radio" name="paymentType" value="PC">Яндекс.Деньгами</label>
+    <label><input type="radio" name="paymentType" value="AC">Банковской картой</label>
+    <input type="submit" value="Перевести">
+  </form>
+
+  <!-- Yandex.Metrika counter -->
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+      m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(61924180, "init", {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+      webvisor: true
+    });
+  </script>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/61924180" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="/static/js/jquery.autocomplete.min.js"></script>
+  <script src="/static/js/bootstrap.js"></script>
+  <script src="/static/js/script.js"></script>
+</body>
+
+</html>
